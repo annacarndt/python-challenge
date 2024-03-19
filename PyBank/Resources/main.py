@@ -8,7 +8,7 @@ import csv
 
 
 # loading the CSV
-with open(//TODO) as file:
+with open('budget_data.csv', 'r') as file:
     reader = csv.reader(file)
 
     # handle the header row
@@ -17,7 +17,8 @@ with open(//TODO) as file:
     # initiate prev_month_profit
 
     # for loop to loop through the rest of the rows:
-    for row in reader:
+    for row in reader: 
+        print(row)
 
         # track totals (month + profit/loss)
 
