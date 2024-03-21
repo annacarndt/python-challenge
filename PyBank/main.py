@@ -1,75 +1,59 @@
-# Initialize count of Months 
+# define months
 total_months = 0
 
-# Open the CSV file
+# open cvs
 with open('/Users/annaarndt/Desktop/Bootcamp/python-challenge/PyBank/budget_data.csv', 'r') as file:
-    # Skip the header
     next(file)
-    
-    # Iterate over each line in the file
     for line in file:
-        # Increment the count for each line
         total_months += 1
 
 print("Total Months:", total_months)
-
-# Initialize net total
 net_profit_losses = 0
 
-# Open the CSV file
+# open cvs file
 with open('/Users/annaarndt/Desktop/Bootcamp/python-challenge/PyBank/budget_data.csv', 'r') as file:
-    # Skip the header
     next(file)
-    
-    # Iterate over each line in the file
     for line in file:
-        # Split the line by comma
         data = line.strip().split(',')
-        # Extract profit/loss value and add it to the net total
+        # profit and loss value 
         net_profit_losses += int(data[1])
 
 print("Total:", net_profit_losses)
 
-# Initialize variables
+# define variables
 previous_profit_loss = None
 total_change = 0
 change_count = 0
 
-# Open the CSV file
+# open cvs
 with open('/Users/annaarndt/Desktop/Bootcamp/python-challenge/PyBank/budget_data.csv', 'r') as file:
-    # Skip the header
     next(file)
-    
-    # Iterate over each line in the file
     for line in file:
-        # Split the line by comma
         data = line.strip().split(',')
         
-        # Extract the profit/loss value
+        # profit and loss value
         profit_loss = int(data[1])
         
-        # If previous profit/loss exists, calculate the change
+        # if profit loss exists, calculate change
         if previous_profit_loss is not None:
             change = profit_loss - previous_profit_loss
             total_change += change
             change_count += 1
         
-        # Update the previous profit/loss value
         previous_profit_loss = profit_loss
 
-# Calculate the average change
+# find average change
 average_change = total_change / change_count
 
 print("Average change:$", average_change)
 
-# Initialize variables
+# define variables
 max_increase_date = None
 max_increase_amount = float('-inf')
 previous_profit_loss = None
 
-# Open the CSV file
+# open csv
 with open('/Users/annaarndt/Desktop/Bootcamp/python-challenge/PyBank/budget_data.csv', 'r') as file:
-    # Skip the header
     next(file)
     
     # Iterate over each line in the file
